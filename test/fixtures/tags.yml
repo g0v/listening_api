@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  eng_name: MyString
+  value: MyString
+  is_published: false
+
+two:
+  name: MyString
+  eng_name: MyString
+  value: MyString
+  is_published: false
