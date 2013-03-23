@@ -6,9 +6,15 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'rails-api'
-
 gem 'mysql2'
 
+gem 'ancestry'
+gem 'acts_as_commentable'
+
+group :development do
+  gem 'annotate'
+  gem 'thin'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
