@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <title>福利請聽後台</title>
+  <meta charset="utf-8">
+  <meta name="robots" content="INDEX,FOLLOW">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= yield :head_includes %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]><script src="/assets/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+
+  <div class="container"><%= yield %></div>
+
+  <%= yield :footer_includes %>
+</body>
+</html>

@@ -1,7 +1,7 @@
 CodeforwelfareApi::Application.routes.draw do
   get "welcome/index"
 
-  devise_for :admin_users
+  devise_for :admin_users, :skip => :registerable
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

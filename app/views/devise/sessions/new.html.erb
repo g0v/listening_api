@@ -1,17 +1,28 @@
-<h2>Sign in</h2>
+<h2>登入</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "form-horizontal" }) do |f| %>
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">信箱</label>
+    <div class="controls">
+      <%= f.email_field :email, :autofocus => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">密碼</label>
+    <div class="controls">
+      <%= f.password_field :password %>
+    </div>
+  </div>
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
+    <div class="control-group">
+      <div class="controls">
+        <label class="checkbox">
+          <%= f.check_box :remember_me %> 記住我的登入
+        </label>
+        <%= f.submit "登入", :class => "btn" %>
+      </div>
+    </div>
+  <% end %>
 <% end %>
 
 <%= render "devise/shared/links" %>
