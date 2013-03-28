@@ -14,6 +14,9 @@ gem 'acts_as_commentable'
 group :development do
   gem 'annotate'
   gem 'thin'
+  gem 'wirble'
+  gem 'hirb'
+  gem 'hirb-unicode'
 end
 
 # Gems used only for assets and not required
