@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328112803) do
+ActiveRecord::Schema.define(:version => 20130328113132) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -61,8 +61,10 @@ ActiveRecord::Schema.define(:version => 20130328112803) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "eng_name"
   end
 
+  add_index "govs", ["eng_name"], :name => "index_govs_on_eng_name"
   add_index "govs", ["name"], :name => "index_govs_on_name"
 
   create_table "help_tags", :force => true do |t|

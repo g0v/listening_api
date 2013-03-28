@@ -7,8 +7,9 @@
 #  description :string(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  eng_name    :string(255)
 #
 
 class Gov < ActiveRecord::Base
-  attr_accessible :description, :name
+  attr_accessible :description, :name, :eng_name
 end
