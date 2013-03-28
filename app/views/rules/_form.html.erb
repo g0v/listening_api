@@ -1,0 +1,36 @@
+<%= form_for @rule, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="control-group">
+    <%= f.label "標題", :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "內容", :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_area :content %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "網址", :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :url %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "機關", :class => "control-label" %>
+    <div class="controls">
+      <%= f.select :gov_id, Gov.all.map {|c| [c.name, c.id]} %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "公開確認", :class => "control-label" %>
+    <div class="controls">
+      <%= f.check_box :is_published %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= link_to('取消', rules_path, :class => "btn") %>
+    <%= f.submit("送出", :class => 'btn btn-primary') %>
+  </div>
+<% end %>
