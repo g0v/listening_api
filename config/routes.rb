@@ -3,6 +3,8 @@ CodeforwelfareApi::Application.routes.draw do
 
   devise_for :admin_users, :skip => :registerable
 
+  resources :rules
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
