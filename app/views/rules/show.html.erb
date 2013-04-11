@@ -1,0 +1,22 @@
+<div class="span12">
+  <div class="page-header">
+    <%= render_ul_breadcrumbs %>
+    <h1>法條 - <%= @rule.title %></h1>
+  </div>
+  <dl class="dl-horizontal">
+    <dt>內容</dt>
+    <dd><%= @rule.content %></dd>
+    <dt>原始網址</dt>
+    <dd><%= link_to('點擊前往', @rule.url, :target => '_blank') %></dd>
+    <dt>機關</dt>
+    <dd><%= link_to(@rule.org.name, org_path(@rule.org_id)) %></dd>
+    <dt>公開確認</dt>
+    <dd><%=t @rule.is_published %></dd>
+  </dl>
+
+  <div class="form-actions">
+    <%= link_to('返回', rules_path, :class => 'btn') %>
+    <%= link_to('編輯', edit_rule_path(@rule), :class => 'btn') %>
+    <%= link_to('刪除', rule_path(@rule), :method => 'delete', :confirm => "確定要刪除法條 - #{@rule.title}", :class => 'btn btn-danger') %>
+  </div>
+</div>

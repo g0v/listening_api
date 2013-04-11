@@ -13,5 +13,7 @@
 #
 
 class Rule < ActiveRecord::Base
-  attr_accessible :content, :gov_id, :title, :url
+  attr_accessible :content, :gov_id, :title, :url, :is_published
+
+  belongs_to :gov
 end
