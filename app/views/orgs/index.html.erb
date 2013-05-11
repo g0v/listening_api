@@ -1,2 +1,37 @@
-<h1>Govs#index</h1>
-<p>Find me in app/views/govs/index.html.erb</p>
+<div class="span12">
+  <div class="page-header">
+    <%= render_ul_breadcrumbs %>
+    <h1>
+      機關管理
+      <span class="pull-right">
+        <%= link_to('新增', new_org_path, :class => 'btn btn-primary') %>
+      </span>
+    </h1>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>編號</th>
+        <th>機關名稱</th>
+        <th>英文名稱</th>
+        <th width="50%">描述</th>
+        <th>動作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orgs.each do |org| %>
+        <tr>
+          <td><%= org.id %></td>
+          <td><%= link_to(org.name, org_path(org)) %></td>
+          <td><%= org.eng_name %></td>
+          <td><%= org.description %></td>
+          <td>
+            <%= link_to('編輯', edit_org_path(org), :class => 'btn btn-mini') %>
+            <%= link_to('刪除', org_path(org), :method => :delete, :data => { :confirm => '確定要刪除嗎？' }, :class => 'btn btn-mini btn-danger') %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @orgs %>
+</div>

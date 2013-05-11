@@ -12,4 +12,7 @@
 
 class Org < ActiveRecord::Base
   attr_accessible :description, :name, :eng_name
+
+  validates_presence_of :name, :eng_name
+  validates_length_of :description, :in => 0..255
 end
