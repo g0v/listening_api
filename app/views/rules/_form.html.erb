@@ -1,4 +1,4 @@
-<%= form_for @rule, :html => {:class => "form-horizontal"} do |f| %>
+<%= form_for @rule, :validate => true, :html => {:class => "form-horizontal"} do |f| %>
   <div class="control-group">
     <%= f.label "標題", :class => "control-label" %>
     <div class="controls">
