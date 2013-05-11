@@ -1,3 +1,4 @@
+# encoding: utf-8
 class RulesController < ApplicationController
   before_filter :set_breadcrumbs, :only => [:index, :new, :edit, :show]
   before_filter :find_rule, :only => [:edit, :update, :show, :destroy]

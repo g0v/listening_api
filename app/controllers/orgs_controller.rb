@@ -1,3 +1,4 @@
+# encoding: utf-8
 class OrgsController < ApplicationController
   before_filter :set_breadcrumbs, :except => [:destroy]
   before_filter :find_org, :only => [:edit, :update, :show, :destroy]
