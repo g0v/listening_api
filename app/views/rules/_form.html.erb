@@ -32,5 +32,6 @@
   <div class="form-actions">
     <%= link_to('取消', rules_path, :class => "btn") %>
     <%= f.submit("送出", :class => 'btn btn-primary') %>
+    <%= f.submit("送出並新增", :name => 'save_and_create', :class => 'btn btn-primary') %>
   </div>
 <% end %>
