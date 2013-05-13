@@ -20,7 +20,7 @@
   <div class="control-group">
     <%= f.label "機關", :class => "control-label" %>
     <div class="controls">
-      <%= f.select :org_id, Org.all.map {|c| [c.name, c.id]} %>
+      <%= f.select :org_id, @orgs, :prompt => '請選擇機關' %>
     </div>
   </div>
   <div class="control-group">

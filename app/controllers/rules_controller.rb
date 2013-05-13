@@ -9,6 +9,7 @@ class RulesController < ApplicationController
 
   def new
     @rule = Rule.new
+    @orgs = Org.select('id, name').map {|c| [c.name, c.id]}
     @breadcrumbs << ['新增法條']
   end
 
@@ -18,11 +19,13 @@ class RulesController < ApplicationController
     if @rule.save
       redirect_to rule_path(@rule)
     else
+      @orgs = Org.select('id, name').map {|c| [c.name, c.id]}
       render :new
     end
   end
 
   def edit
+    @orgs = Org.select('id, name').map {|c| [c.name, c.id]}
     @breadcrumbs << ["編輯法條－#{@rule.title}"]
   end
 
@@ -30,6 +33,7 @@ class RulesController < ApplicationController
     if @rule.update_attributes(params[:rule])
       redirect_to rule_path(@rule)
     else
+      @orgs = Org.select('id, name').map {|c| [c.name, c.id]}
       render :edit
     end
   end
