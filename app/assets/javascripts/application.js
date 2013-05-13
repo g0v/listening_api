@@ -26,3 +26,4 @@
 //  require twitter/bootstrap/affix
 //= require rails.validations-ie8-fix
 //= require rails.validations
+//= require showdown
