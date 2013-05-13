@@ -14,5 +14,10 @@
 class Tag < ActiveRecord::Base
   attr_accessible :eng_name, :name, :value, :is_published
 
+  has_many :rule_tags
+  has_many :rules, :through => :rule_tags
+
   validates_presence_of :eng_name, :value
+
+  scope :key, lambda { |eng_name| where(:eng_name => eng_name) }
 end
