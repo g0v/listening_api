@@ -5,7 +5,9 @@
   </div>
   <dl class="dl-horizontal">
     <dt>內容</dt>
-    <dd id="rule-content-md"><%= @rule.content %></dd>
+    <dd>
+      <div class="well" id="rule-content-md"><%= @rule.content %></div>
+    </dd>
     <dt>原始網址</dt>
     <dd><%= link_to('點擊前往', @rule.url, :target => '_blank') %></dd>
     <dt>機關</dt>
