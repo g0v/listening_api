@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: govs
+# Table name: orgs
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
@@ -12,7 +12,7 @@
 
 require 'test_helper'
 
-class GovTest < ActiveSupport::TestCase
+class OrgTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -4,7 +4,7 @@
 #
 #  id           :integer          not null, primary key
 #  title        :string(255)
-#  gov_id       :integer
+#  org_id       :integer
 #  content      :text
 #  url          :string(255)
 #  is_published :boolean          default(FALSE)

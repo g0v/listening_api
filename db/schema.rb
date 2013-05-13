@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328113132) do
+ActiveRecord::Schema.define(:version => 20130509011912) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -56,17 +56,6 @@ ActiveRecord::Schema.define(:version => 20130328113132) do
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
-  create_table "govs", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "eng_name"
-  end
-
-  add_index "govs", ["eng_name"], :name => "index_govs_on_eng_name"
-  add_index "govs", ["name"], :name => "index_govs_on_name"
-
   create_table "help_tags", :force => true do |t|
     t.integer  "help_id"
     t.integer  "tag_id"
@@ -88,6 +77,16 @@ ActiveRecord::Schema.define(:version => 20130328113132) do
   add_index "helps", ["email"], :name => "index_helps_on_email"
   add_index "helps", ["name"], :name => "index_helps_on_name"
 
+  create_table "orgs", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "eng_name"
+  end
+
+  add_index "orgs", ["eng_name"], :name => "index_orgs_on_eng_name"
+
   create_table "rule_tags", :force => true do |t|
     t.integer  "rule_id"
     t.integer  "tag_id"
@@ -102,7 +101,7 @@ ActiveRecord::Schema.define(:version => 20130328113132) do
 
   create_table "rules", :force => true do |t|
     t.string   "title"
-    t.integer  "gov_id"
+    t.integer  "org_id"
     t.text     "content"
     t.string   "url"
     t.boolean  "is_published", :default => false
@@ -110,8 +109,8 @@ ActiveRecord::Schema.define(:version => 20130328113132) do
     t.datetime "updated_at",                      :null => false
   end
 
-  add_index "rules", ["gov_id"], :name => "index_rules_on_gov_id"
   add_index "rules", ["is_published"], :name => "index_rules_on_is_published"
+  add_index "rules", ["org_id"], :name => "index_rules_on_org_id"
 
   create_table "tags", :force => true do |t|
     t.string   "name"

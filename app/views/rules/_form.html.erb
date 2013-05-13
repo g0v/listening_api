@@ -20,7 +20,7 @@
   <div class="control-group">
     <%= f.label "機關", :class => "control-label" %>
     <div class="controls">
-      <%= f.select :gov_id, Gov.all.map {|c| [c.name, c.id]} %>
+      <%= f.select :org_id, Org.all.map {|c| [c.name, c.id]} %>
     </div>
   </div>
   <div class="control-group">

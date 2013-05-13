@@ -5,7 +5,7 @@ CodeforwelfareApi::Application.routes.draw do
 
   resources :rules
   resources :tags
-  resources :govs
+  resources :orgs
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

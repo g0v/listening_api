@@ -4,7 +4,7 @@
 #
 #  id           :integer          not null, primary key
 #  title        :string(255)
-#  gov_id       :integer
+#  org_id       :integer
 #  content      :text
 #  url          :string(255)
 #  is_published :boolean          default(FALSE)
@@ -16,14 +16,14 @@
 
 one:
   title: MyString
-  gov_id: 1
+  org_id: 1
   content: MyText
   url: MyString
   is_published: false
 
 two:
   title: MyString
-  gov_id: 1
+  org_id: 1
   content: MyText
   url: MyString
   is_published: false

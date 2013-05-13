@@ -4,7 +4,7 @@
 #
 #  id           :integer          not null, primary key
 #  title        :string(255)
-#  gov_id       :integer
+#  org_id       :integer
 #  content      :text
 #  url          :string(255)
 #  is_published :boolean          default(FALSE)
@@ -13,7 +13,9 @@
 #
 
 class Rule < ActiveRecord::Base
-  attr_accessible :content, :gov_id, :title, :url, :is_published
+  attr_accessible :content, :org_id, :title, :url, :is_published
 
-  belongs_to :gov
+  belongs_to :org
+
+  validates_presence_of :title, :org_id
 end

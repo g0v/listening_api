@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: govs
+# Table name: orgs
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
@@ -10,6 +10,6 @@
 #  eng_name    :string(255)
 #
 
-class Gov < ActiveRecord::Base
+class Org < ActiveRecord::Base
   attr_accessible :description, :name, :eng_name
 end

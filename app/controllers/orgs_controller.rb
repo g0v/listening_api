@@ -1,4 +1,4 @@
-class GovsController < ApplicationController
+class OrgsController < ApplicationController
   def index
   end
 

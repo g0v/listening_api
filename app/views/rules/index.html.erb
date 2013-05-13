@@ -23,7 +23,7 @@
         <tr>
           <td style="width:5%;"><%= rule.id %></td>
           <td><%= link_to(rule.title, rule_path(rule)) %></td>
-          <td style="width:10%;"><%= link_to(rule.gov.name, gov_path(rule.gov_id)) %></td>
+          <td style="width:10%;"><%= link_to(rule.org.name, org_path(rule.org_id)) %></td>
           <td style="width:55%;"><%= safe_truncate_content(rule.content, 100) %></td>
           <td>
             <%= link_to '編輯', edit_rule_path(rule), :class => 'btn btn-mini' %>

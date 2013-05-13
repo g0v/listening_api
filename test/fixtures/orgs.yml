@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: govs
+# Table name: orgs
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
