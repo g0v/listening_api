@@ -11,5 +11,8 @@
 #
 
 class RuleTag < ActiveRecord::Base
-  attr_accessible :rule_id, :tag_id
+  attr_accessible :rule_id, :tag_id, :is_published
+
+  belongs_to :rule
+  belongs_to :tag
 end

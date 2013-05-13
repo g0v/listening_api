@@ -4,7 +4,7 @@ class TagsController < ApplicationController
   before_filter :find_tag, :only => [:edit, :update, :show, :destroy]
 
   def index
-    @tags = Tag.page(params[:page])
+    @tags = Tag.order('id DESC').page(params[:page])
   end
 
   def new

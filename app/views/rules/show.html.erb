@@ -14,6 +14,12 @@
     <dd><%= link_to(@rule.org.name, org_path(@rule.org_id)) %></dd>
     <dt>公開確認</dt>
     <dd><%=t @rule.is_published %></dd>
+    <dt>標籤</dt>
+    <dd>
+      <% @tags.each do |tag| %>
+        <%= tag.eng_name %>: <%= tag.value %><br>
+      <% end %>
+    </dd>
   </dl>
 
   <div class="form-actions">

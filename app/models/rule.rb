@@ -16,6 +16,8 @@ class Rule < ActiveRecord::Base
   attr_accessible :content, :org_id, :title, :url, :is_published
 
   belongs_to :org
+  has_many :rule_tags
+  has_many :tags, :through => :rule_tags
 
   validates_presence_of :title, :org_id
 end

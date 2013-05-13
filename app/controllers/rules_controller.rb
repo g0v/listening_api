@@ -1,10 +1,10 @@
 # encoding: utf-8
 class RulesController < ApplicationController
   before_filter :set_breadcrumbs, :only => [:index, :new, :edit, :show]
-  before_filter :find_rule, :only => [:edit, :update, :show, :destroy]
+  before_filter :find_rule, :only => [:edit, :update, :destroy]
 
   def index
-    @rules = Rule.page(params[:page])
+    @rules = Rule.order('id DESC').page(params[:page])
   end
 
   def new
@@ -47,6 +47,8 @@ class RulesController < ApplicationController
   end
 
   def show
+    @rule = Rule.includes(:rule_tags => :tag).find(params[:id])
+    @tags = @rule.tags
     @breadcrumbs << [@rule.title]
   end
 
