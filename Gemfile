@@ -9,10 +9,10 @@ gem 'kaminari'
 gem 'ancestry'
 gem 'acts_as_commentable'
 gem 'client_side_validations'
+gem 'thin'
 
 group :development do
   gem 'annotate'
-  gem 'thin'
   gem 'wirble'
   gem 'hirb'
   gem 'hirb-unicode'
