@@ -12,6 +12,10 @@
   <%= yield :head_includes %>
   <%= csrf_meta_tags %>
   <!--[if lt IE 9]><script src="/assets/html5shiv.js"></script><![endif]-->
+  <script type="text/javascript" charset="utf-8">
+    var converter = new Showdown.converter();
+    var html_text;
+  </script>
 </head>
 <body>
 

@@ -5,7 +5,7 @@
   </div>
   <dl class="dl-horizontal">
     <dt>內容</dt>
-    <dd><%= @rule.content %></dd>
+    <dd id="rule-content-md"><%= @rule.content %></dd>
     <dt>原始網址</dt>
     <dd><%= link_to('點擊前往', @rule.url, :target => '_blank') %></dd>
     <dt>機關</dt>
@@ -20,3 +20,10 @@
     <%= link_to('刪除', rule_path(@rule), :method => 'delete', :confirm => "確定要刪除法條 - #{@rule.title}", :class => 'btn btn-danger') %>
   </div>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+$(function(){
+  html_text = converter.makeHtml($('#rule-content-md').text());
+  $('#rule-content-md').html(html_text);
+})
+</script>
