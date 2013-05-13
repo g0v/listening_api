@@ -1,7 +1,9 @@
 CodeforwelfareApi::Application.routes.draw do
   devise_for :admin_users, :skip => :registerable
 
-  resources :rules
+  resources :rules do
+    post 'add_tags', :on => :member
+  end
   resources :tags
   resources :orgs
   resources :admin_users, :only => [:index, :new, :create]
