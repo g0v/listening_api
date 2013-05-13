@@ -11,6 +11,6 @@ class Api::SearchesController < ApplicationController
 
     rule_ids = RuleTag.where(:tag_id => tag_ids).map {|c| c.rule_id}.uniq
     rules = Rule.where(:id => rule_ids)
-    render :json => rules.to_json
+    render :json => rules.to_json, :callback => params[:callback]
   end
 end
