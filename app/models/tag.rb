@@ -12,5 +12,7 @@
 #
 
 class Tag < ActiveRecord::Base
-  attr_accessible :eng_name, :name, :value
+  attr_accessible :eng_name, :name, :value, :is_published
+
+  validates_presence_of :eng_name, :value
 end
