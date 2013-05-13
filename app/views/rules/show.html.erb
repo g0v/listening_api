@@ -19,6 +19,7 @@
       <% @tags.each do |tag| %>
         <%= tag.eng_name %>: <%= tag.value %><br>
       <% end %>
+      <a href="#rule-add-tags" role="button" class="btn btn-info" data-toggle="modal">新增標籤</a>
     </dd>
   </dl>
 
@@ -26,6 +27,20 @@
     <%= link_to('返回', rules_path, :class => 'btn') %>
     <%= link_to('編輯', edit_rule_path(@rule), :class => 'btn') %>
     <%= link_to('刪除', rule_path(@rule), :method => 'delete', :confirm => "確定要刪除法條 - #{@rule.title}", :class => 'btn btn-danger') %>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="rule-add-tags" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ruleAddTagsLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="ruleAddTagsLabel">法條新增標籤</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   </div>
 </div>
 
