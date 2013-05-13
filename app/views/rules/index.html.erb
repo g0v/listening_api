@@ -22,7 +22,7 @@
       <% @rules.each do |rule| %>
         <tr>
           <td style="width:5%;"><%= rule.id %></td>
-          <td><%= link_to(rule.title, rule_path(rule)) %></td>
+          <td style="width:20%;"><%= link_to(rule.title, rule_path(rule)) %></td>
           <td style="width:10%;"><%= link_to(rule.org.name, org_path(rule.org_id)) %></td>
           <td style="width:55%;"><%= safe_truncate_content(rule.content, 100) %></td>
           <td>

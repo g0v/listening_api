@@ -13,11 +13,17 @@ class TagsController < ApplicationController
   end
 
   def create
+    params[:tag][:name].strip!
+    params[:tag][:eng_name].strip!
     params[:tag][:is_published] = true
     @tag = Tag.new(params[:tag])
 
     if @tag.save
-      redirect_to tags_path
+      if params[:save_and_create]
+        redirect_to new_tag_path(:name => @tag.name, :eng_name => @tag.eng_name)
+      else
+        redirect_to tags_path
+      end
     else
       @breadcrumbs << ['新增標籤']
       render :new
@@ -29,6 +35,8 @@ class TagsController < ApplicationController
   end
 
   def update
+    params[:tag][:name].strip!
+    params[:tag][:eng_name].strip!
     if @tag.update_attributes(params[:tag])
       redirect_to tags_path
     else
