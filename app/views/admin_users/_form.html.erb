@@ -1,0 +1,12 @@
+<%= form_for @admin_user, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="control-group">
+    <%= f.label "信箱", :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :email %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= link_to('取消', admin_users_path, :class => "btn") %>
+    <%= f.submit("送出", :class => 'btn btn-primary') %>
+  </div>
+<% end %>
