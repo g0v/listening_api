@@ -61,5 +61,7 @@ module CodeforwelfareApi
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    config.json_engine = ActiveSupport::JSON
   end
 end

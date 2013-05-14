@@ -10,12 +10,18 @@ gem 'ancestry'
 gem 'acts_as_commentable'
 gem 'client_side_validations'
 gem 'thin'
+gem 'rabl'
+gem 'oj'
 
 group :development do
   gem 'annotate'
   gem 'wirble'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry'
 end
 
 group :assets do
