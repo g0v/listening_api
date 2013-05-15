@@ -9,10 +9,11 @@ class Api::RulesController < ApplicationController
 
   def show
     @rule = @org.rules.find(params[:id])
+    @tags = @rule.tags
   end
 
   private
   def find_org
-    @org = Org.find_by_eng_name(params[:org_id])
+    @org = Org.includes(:rules => :tags).find_by_eng_name(params[:org_id])
   end
 end
