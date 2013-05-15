@@ -6,6 +6,7 @@ gem 'pg'
 
 gem 'devise'
 gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 gem 'ancestry'
 gem 'acts_as_commentable'
 gem 'client_side_validations'

@@ -43,6 +43,9 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
+    bootstrap-kaminari-views (0.0.2)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.0.4)
     chunky_png (1.2.8)
     client_side_validations (3.2.5)
@@ -168,6 +171,7 @@ DEPENDENCIES
   annotate
   better_errors
   binding_of_caller
+  bootstrap-kaminari-views
   client_side_validations
   coffee-rails (~> 3.2.1)
   compass-rails
