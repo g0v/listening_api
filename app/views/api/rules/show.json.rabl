@@ -5,6 +5,6 @@ child @rule do
   attributes :id, :title, :content, :url
 
   child @tags do
-    attributes :name, :eng_name, :value
+    attributes :name, :eng_name, :value, :value_zh
   end
 end

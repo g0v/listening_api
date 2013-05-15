@@ -20,4 +20,8 @@ class Tag < ActiveRecord::Base
   validates_presence_of :eng_name, :value
 
   scope :key, lambda { |eng_name| where(:eng_name => eng_name) }
+
+  def value_zh
+    I18n.t "#{eng_name}.#{value}"
+  end
 end
