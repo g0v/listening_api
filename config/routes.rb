@@ -9,9 +9,9 @@ CodeforwelfareApi::Application.routes.draw do
   resources :admin_users, :only => [:index, :new, :create]
 
   namespace :api do
-    resource :search
-    resources :orgs do
-      resources :rules
+    resource :search, :only => [:show]
+    resources :orgs, :only => [:index, :show] do
+      resources :rules, :only => [:index, :show]
     end
   end
 
