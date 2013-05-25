@@ -13,6 +13,7 @@ CodeforwelfareApi::Application.routes.draw do
     resources :orgs, :only => [:index, :show] do
       resources :rules, :only => [:index, :show]
     end
+    resources :tags, :only => [:index]
   end
 
   # The priority is based upon order of creation:
