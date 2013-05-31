@@ -14,4 +14,6 @@ class Link < ActiveRecord::Base
 
   has_many :rule_links
   has_many :rules, :through => :rule_links
+
+  validates_presence_of :url
 end
