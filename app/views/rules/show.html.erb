@@ -18,6 +18,21 @@
         <a href="#rule-add-tags" role="button" class="btn btn-info" data-toggle="modal">新增標籤</a>
       </div>
     </dd>
+    <dt>相關連結</dt>
+    <dd>
+      <div class="well" id="rule-links">
+        <% @links.each do |link| %>
+          <%= link_to(link.name || link.url, link.url, :target => '_blank') %><br>
+        <% end %>
+        <hr>
+        <%= form_for @link, :url => add_link_rule_path(@rule), :validate => true, :remote => true do |f| %>
+          <%= f.text_field :name, :placeholder => '連結名稱' %>
+          <%= f.text_field :url, :placeholder => '連結網址，請加上 http://' %>
+          <%= f.submit '新增', :class => 'btn' %>
+          <div class="clearboth"></div>
+        <% end %>
+      </div>
+    </dd>
     <dt>原始網址</dt>
     <dd><%= link_to('點擊前往', @rule.url, :target => '_blank') %></dd>
     <dt>機關</dt>
@@ -34,36 +49,11 @@
   </div>
 </div>
 
-<!-- Modal -->
-<div id="rule-add-tags" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ruleAddTagsLabel" aria-hidden="true" data-backdrop="static">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="ruleAddTagsLabel">法條新增標籤</h3>
-  </div>
-  <div class="modal-body" style="height:300px">
-    <%= form_for 'add', :url => add_tags_rule_path(@rule), :html => {:id => 'add-tags-form'} do |f| %>
-      <label>標籤</label>
-      <%= f.text_field 'tags', :'data-provide' => 'typeahead', :style => 'width: 450px;' %>
-      <%= f.submit '送出', :class => 'btn btn-primary pull-right' %>
-    <% end %>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  </div>
-</div>
-
 <script type="text/javascript" charset="utf-8">
 $(function(){
-  var tag_id;
   html_text = converter.makeHtml($('#rule-content-md').text());
   $('#rule-content-md').html(html_text);
-  $('#add_tags').typeahead({
-    source: <%== @tags_array %>,
-    updater: function(item){
-      tag_id = item.replace(/\..*/, '')
-      $('#add-tags-form').append('<span class="label label-info">' + item + '</span> ');
-      $('#add-tags-form').append('<input name="new_tags[]" type="hidden" value="' + tag_id + '">')
-    }
-  });
 })
 </script>
+
+<%= render 'tags_modal', :rule => @rule, :tags_array => @tags_array %>
