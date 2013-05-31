@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: rule_links
+#
+#  id      :integer          not null, primary key
+#  rule_id :integer
+#  link_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rule_id: 1
+  link_id: 1
+
+two:
+  rule_id: 1
+  link_id: 1

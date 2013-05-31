@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509011912) do
+ActiveRecord::Schema.define(:version => 20130531143319) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -77,6 +77,13 @@ ActiveRecord::Schema.define(:version => 20130509011912) do
   add_index "helps", ["email"], :name => "index_helps_on_email"
   add_index "helps", ["name"], :name => "index_helps_on_name"
 
+  create_table "links", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "orgs", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -86,6 +93,14 @@ ActiveRecord::Schema.define(:version => 20130509011912) do
   end
 
   add_index "orgs", ["eng_name"], :name => "index_orgs_on_eng_name"
+
+  create_table "rule_links", :force => true do |t|
+    t.integer "rule_id"
+    t.integer "link_id"
+  end
+
+  add_index "rule_links", ["link_id"], :name => "index_rule_links_on_link_id"
+  add_index "rule_links", ["rule_id"], :name => "index_rule_links_on_rule_id"
 
   create_table "rule_tags", :force => true do |t|
     t.integer  "rule_id"

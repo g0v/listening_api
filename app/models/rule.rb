@@ -18,6 +18,8 @@ class Rule < ActiveRecord::Base
   belongs_to :org
   has_many :rule_tags
   has_many :tags, :through => :rule_tags
+  has_many :rule_links
+  has_many :links, :through => :rule_links
 
   validates_presence_of :title, :org_id
 end

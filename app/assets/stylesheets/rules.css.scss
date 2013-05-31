@@ -1,0 +1,22 @@
+#new_link {
+  height: 30px;
+  margin: 0;
+
+  input {
+    margin-right: 10px;
+    float: left;
+  }
+
+  #link_name { width: 150px; }
+  #link_url { width: 400px; }
+
+  .field_with_errors {
+    display: block;
+    position: relative;
+    label {
+      position: absolute;
+      left: 170px; top: 30px;
+      width: 200px;
+    }
+  }
+}
