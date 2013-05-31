@@ -1,3 +1,4 @@
+# encoding: utf-8
 # == Schema Information
 #
 # Table name: links
@@ -16,4 +17,5 @@ class Link < ActiveRecord::Base
   has_many :rules, :through => :rule_links
 
   validates_presence_of :url
+  validates_format_of :url, :with => URI::regexp(%w(http https)), :message => '格式不對喔，有沒有漏掉 http:// 呢？'
 end

@@ -18,6 +18,21 @@
         <a href="#rule-add-tags" role="button" class="btn btn-info" data-toggle="modal">新增標籤</a>
       </div>
     </dd>
+    <dt>相關連結</dt>
+    <dd>
+      <div class="well" id="rule-links">
+        <% @links.each do |link| %>
+          <%= link_to(link.name || link.url, link.url, :target => '_blank') %><br>
+        <% end %>
+        <hr>
+        <%= form_for @link, :url => add_link_rule_path(@rule), :validate => true, :remote => true do |f| %>
+          <%= f.text_field :name, :placeholder => '連結名稱' %>
+          <%= f.text_field :url, :placeholder => '連結網址，請加上 http://' %>
+          <%= f.submit '新增', :class => 'btn' %>
+          <div class="clearboth"></div>
+        <% end %>
+      </div>
+    </dd>
     <dt>原始網址</dt>
     <dd><%= link_to('點擊前往', @rule.url, :target => '_blank') %></dd>
     <dt>機關</dt>

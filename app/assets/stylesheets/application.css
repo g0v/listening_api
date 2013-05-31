@@ -10,4 +10,5 @@
  *
  *= require app_bootstrap
  *= require client_side_validations
+ *= require rules
  */

@@ -3,6 +3,7 @@ CodeforwelfareApi::Application.routes.draw do
 
   resources :rules do
     post 'add_tags', :on => :member
+    post 'add_link', :on => :member
   end
   resources :tags
   resources :orgs

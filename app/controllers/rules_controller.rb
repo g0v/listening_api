@@ -1,7 +1,7 @@
 # encoding: utf-8
 class RulesController < ApplicationController
   before_filter :set_breadcrumbs, :only => [:index, :new, :edit, :show]
-  before_filter :find_rule, :only => [:edit, :update, :destroy, :add_tags]
+  before_filter :find_rule, :only => [:edit, :update, :destroy, :add_tags, :add_link]
 
   def index
     @rules = Rule.order('id DESC').page(params[:page])
@@ -47,9 +47,11 @@ class RulesController < ApplicationController
   end
 
   def show
-    @rule = Rule.includes(:rule_tags => :tag).find(params[:id])
+    @rule = Rule.includes(:rule_tags => :tag, :rule_links => :link).find(params[:id])
     @tags = @rule.tags
     @tags_array = Tag.select('id, eng_name, value').map {|c| "#{c.id}. #{c.eng_name}: #{c.value}"}
+    @links = @rule.links.order('id DESC')
+    @link = Link.new
     @breadcrumbs << [@rule.title]
   end
 
@@ -63,6 +65,14 @@ class RulesController < ApplicationController
       RuleTag.create(:rule_id => @rule.id, :tag_id => tag_id, :is_published => true)
     end
     redirect_to :back
+  end
+
+  def add_link
+    @link = @rule.links.create(params[:link])
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
