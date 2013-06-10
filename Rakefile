@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CodeforwelfareApi::Application.load_tasks
+ListeningApi::Application.load_tasks

@@ -1,4 +1,4 @@
-CodeforwelfareApi::Application.routes.draw do
+ListeningApi::Application.routes.draw do
   devise_for :admin_users, :skip => :registerable
 
   resources :rules do
