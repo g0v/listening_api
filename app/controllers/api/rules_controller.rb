@@ -1,6 +1,6 @@
 class Api::RulesController < ApplicationController
   skip_before_filter :authenticate_admin_user!
-  before_filter :find_org
+  before_filter :find_org, :excerpt => :get
   respond_to :json
 
   def index
@@ -10,6 +10,13 @@ class Api::RulesController < ApplicationController
   def show
     @rule = @org.rules.find(params[:id])
     @tags = @rule.tags
+  end
+
+  def get
+    @rule = Rule.find(params[:id])
+    @org = @rule.org
+    @tags = @rule.tags
+    render :show
   end
 
   private

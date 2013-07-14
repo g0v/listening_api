@@ -14,6 +14,7 @@ ListeningApi::Application.routes.draw do
     resources :orgs, :only => [:index, :show] do
       resources :rules, :only => [:index, :show]
     end
+    get '/rules/:id' => 'rules#get'
     resources :tags, :only => [:index]
   end
 
