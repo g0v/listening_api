@@ -18,6 +18,13 @@ ListeningApi::Application.routes.draw do
     resources :tags, :only => [:index]
   end
 
+  namespace :public do
+    resources :orgs, :only => [:index, :show] do
+      resources :rules, :only => [:index, :show]
+    end
+    get '/rules/:id' => 'rules#get'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
