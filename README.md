@@ -18,6 +18,20 @@
     http://listening-api.g0v.tw/public/orgs/KHH/rules.json
     http://listening-api.g0v.tw/public/orgs/KHH/rules/:id.json
 
+或是
+
+    http://listening-api.g0v.tw/public/rules/:id.json
+
+AJAX 範例
+
+    $.ajax({
+      type: "GET",
+      url: 'http://listening-api.g0v.tw/public/orgs/KHH/rules/1',
+      dataType: 'jsonp'
+    }).success(function(data){
+      console.log(data);
+    });
+
 ### 合理使用聲明
 
 本專案內所收錄的法條，由福利請聽團隊整理自各項福利的官網資訊。
