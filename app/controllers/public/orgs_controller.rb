@@ -3,7 +3,7 @@ class Public::OrgsController < ApplicationController
   respond_to :json
 
   def index
-    @orgs = Org.order('id DESC').page(params[:page])
+    @orgs = Org.order('id DESC')#.page(params[:page])
   end
 
   def show

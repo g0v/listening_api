@@ -4,7 +4,7 @@ class Public::RulesController < ApplicationController
   respond_to :json
 
   def index
-    @rules = @org.rules.order('id DESC').page(params[:page])
+    @rules = @org.rules.order('id DESC')#.page(params[:page])
   end
 
   def show
