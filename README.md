@@ -15,8 +15,8 @@
 
 法條 API
 
-    http://listening-api.g0v.tw/public/orgs/KHH/rules.json
-    http://listening-api.g0v.tw/public/orgs/KHH/rules/:id.json
+    http://listening-api.g0v.tw/public/orgs/:eng_name/rules.json
+    http://listening-api.g0v.tw/public/orgs/:eng_name/rules/:id.json
 
 或是
 
